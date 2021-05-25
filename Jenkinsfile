@@ -16,12 +16,7 @@ pipeline {
 }
   
     stages {
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-		sh 'go test'
-            }
-        }
+
         stage('Build') {
             steps {
 		echo 'Building'
