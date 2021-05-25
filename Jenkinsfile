@@ -1,4 +1,5 @@
 pipeline {
+   timeout(30){
     agent any
 
     stages {
@@ -21,4 +22,5 @@ pipeline {
             }
         }
     }
+}
 }    
