@@ -1,5 +1,5 @@
 # GoViolin
-A docerized go web app where the build is automated by a jenkins pipeline
+A dockerized go web app where the build is automated by a jenkins pipeline
 
 the pipeline is hosted on the localhost so remote building won't work
 
