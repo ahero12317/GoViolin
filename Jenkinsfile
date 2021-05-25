@@ -1,23 +1,24 @@
 pipeline {
-try{
+    agent any
+
     stages {
-        stage('checkout'){ 
-            	checkout scm
-              }
-
-	stage('build'){
-	sh 'sudo docker build -t ahero12317/goviolin .'
-	}
-	stage('deploy'){
-	echo 'push to repo'
-	sh './dockerpush.sh'
-	
-}
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+		sh 'go test'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+		sh 'sudo docker build -t ahero12317/goviolin'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Pushing to Dockerhub repo'
+		sh 'sudo docker push ahero12317/goviolin'
+            }
+        }
     }
-
-  }
-catch(err){
-
-	echo 'error occurred, build failed'
-}
-}    
+}}    
