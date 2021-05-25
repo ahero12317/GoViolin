@@ -1,7 +1,8 @@
 pipeline {
 
     agent any
-  enviroment{
+  environment{
+
 	registry = "ahero12317/goviolin" 
 
         registryCredential = 'dockerhub' 
