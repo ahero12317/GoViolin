@@ -18,13 +18,9 @@ pipeline {
     stages {
 
         stage('Build') {
-            steps {
-		echo 'Building'
-		script{
-            	dockerImage = docker.build registry
-                  }   
+            steps {   
      
-
+		sh 'sudo docker build -t ahero12317/goviolin'
             }
         }
         stage('Deploy') {
