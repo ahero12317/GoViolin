@@ -1,7 +1,19 @@
 pipeline {
-   timeout(30){
-    agent any
 
+    agent any
+  enviroment{
+	registry = "ahero12317/goviolin" 
+
+        registryCredential = 'dockerhub' 
+
+        dockerImage = '' 
+
+
+}
+    options{
+	 timeout(time: 1, unit: 'HOURS') 
+}
+  
     stages {
         stage('Test') {
             steps {
@@ -11,16 +23,28 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building..'
-		sh 'sudo docker build -t ahero12317/goviolin'
+		echo 'Building'
+		scrpit{
+            	dockerImage = docker.build registry
+                  }   
+     
+
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Pushing to Dockerhub repo'
-		sh 'sudo docker push ahero12317/goviolin'
+		script{
+		      docker.withRegistry( '', registryCredential ) { 
+                        dockerImage.push() 
+
+                    }
+
+		}
             }
         }
-    }
+
+  }
+
 }
-}    
+    
