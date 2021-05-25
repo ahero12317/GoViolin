@@ -25,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
 		echo 'Building'
-		scrpit{
+		script{
             	dockerImage = docker.build registry
                   }   
      
