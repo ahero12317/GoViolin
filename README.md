@@ -5,7 +5,7 @@ The docker image: https://hub.docker.com/r/ahero12317/goviolin
 
 the docker image can be run by the following:
 ```
-sudo docker run -e "PORT=$PORT" -p $PORT:$PORT aher12317/goviolin
+sudo docker run -e "PORT=$PORT" -p $PORT:$PORT ahero12317/goviolin
 ```
 
 default port is 8080, otherwise the webapp can be accessed through the port assigned in $PORT
