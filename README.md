@@ -1,7 +1,7 @@
 # GoViolin
 A dockerized go web app where the build is automated by a jenkins pipeline
 
-The docker image: https://hub.docker.com/repository/docker/ahero12317/goviolin
+The docker image: https://hub.docker.com/r/ahero12317/goviolin
 
 the pipeline is hosted on the localhost so remote building won't work
 
