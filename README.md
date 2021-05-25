@@ -1,13 +1,6 @@
 # GoViolin
-
-GoViolin is a web app written in Go that helps with violin practice.
-
-Currently hosted on Heroku at https://go-violin.herokuapp.com/
-
-GoViolin allows practice over both 1 and 2 octaves.
-
-Contains:
-* Major Scales
-* Harmonic and Melodic Minor scales
-* Arpeggios
-* A set of two part scale duet melodies by Franz Wohlfahrt
+A docerized go web app where the build is automated by a jenkins pipeline
+the pipeline is hosted on the localhost so remote building won't work
+here's a gif of the build process
+i've omitted the part where the docker image is pushed since it takes time to upload it
+![Alt Text](Peek 2021-05-26 00-20.gif)
